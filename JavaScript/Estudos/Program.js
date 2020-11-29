@@ -418,3 +418,49 @@ let s = `hello world`;
 // Com o uso de apóstrofos pode referenciar a uma variável da seguinte forma
 let name = "Pedro";
 let greeting = `Hello ${ name }.`; // greeting == "Hello Pedro."
+
+let errorMessage = `\
+\u2718 Test failure at ${filename}:${linenumber}:
+${exception.message}
+Stack trace:
+${exception.stack}
+`;
+
+/^HTML/; // Match the letters H T M L at the start of a string
+/[1-9][0-9]*/; // Match a nonzero digit, followed by any # of digits
+/\bjavascript\b/i; // Match "javascript" as a word, case-insensitive
+
+let text = "testing: 1, 2, 3"; // Sample text
+let pattern = /\d+/g; // Matches all instances of one or more digits
+pattern.test(text) // => true: a match exists
+text.search(pattern) // => 9: position of first match
+text.match(pattern) // => ["1", "2", "3"]: array of all matches
+text.replace(pattern, "#") // => "testing: #, #, #"
+text.split(/\D+/) // => ["","1","2","3"]: split on nondigits
+
+
+// Boolean values
+//False
+undefined
+null
+0
+-0
+NaN
+"" // the empty string
+
+// Símbolos
+let strname = "string name"; // A string to use as a property name
+let symname = Symbol("propname"); // A Symbol to use as a property name
+typeof strname // => "string": strname is a string
+typeof symname // => "symbol": symname is a symbol
+let o = {}; // Create a new object
+o[strname] = 1; // Define a property with a string name
+o[symname] = 2; // Define a property with a Symbol name
+o[strname] // => 1: access the string-named property
+o[symname] // => 2: access the symbol-named property
+
+let s = Symbol.for("shared");
+let t = Symbol.for("shared");
+s === t // => true
+s.toString() // => "Symbol(shared)"
+Symbol.keyFor(t) // => "shared"
