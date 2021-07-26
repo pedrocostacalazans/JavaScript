@@ -1,2 +1,2 @@
 # JavaScript
-Códigos JavaScript.
+Códigos JavaScript
